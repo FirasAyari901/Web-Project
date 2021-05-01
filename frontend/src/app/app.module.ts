@@ -84,6 +84,7 @@ import {
   PostedEmpPageComponent
 } from './pages/posted-emp-page/posted-emp-page.component';
 import * as Hammer from 'hammerjs';
+import { ImgsComponent } from './imgs/imgs.component';
 
 export class CustumHammerConfig extends HammerGestureConfig  {
   overrides = <any>{
@@ -136,6 +137,7 @@ const appRoutes: Routes = [{
     PostulationPageComponent,
     CardEmpPostComponent,
     PostedEmpPageComponent,
+    ImgsComponent,
   ],
   imports: [
     BrowserModule,

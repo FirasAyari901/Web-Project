@@ -18,24 +18,24 @@ export class HomePageComponent implements OnInit {
   public nav :nav;
   public slides: slide[] = [{
       id: 1,
-      title: "hello",
-      text: "    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo repellendus quod possimus vero officia corporis numquam voluptatibus asperiores ab, totam repudiandae ducimus illum, repellat dolorem! Quam doloribus modi incidunt ex!",
+      title: "How Job Career Works for You",
+      text: "Every day we index millions of jobs directly from employer websites. We’re committed to accurate, high-quality jobs so you won’t find old, duplicated, or spammy listings here.",
       image: "../../../assets/img/home1.svg",
       active:true,
       button:"",
       btnDis:true
     }, {
       id: 2,
-      title: "hello",
-      text: "    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo repellendus quod possimus vero officia corporis numquam voluptatibus asperiores ab, totam repudiandae ducimus illum, repellat dolorem! Quam doloribus modi incidunt ex!",
+      title: "Find the Right Job",
+      text: "Organize and automate your job search while at home or on the go. We’ll deliver new, relevant jobs of interest straight to your inbox.",
       image: "../../../assets/img/home2.svg",
       active:false,
       button:"",
     btnDis:true
     }, {
       id: 3,
-      title: "hello",
-      text: "    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo repellendus quod possimus vero officia corporis numquam voluptatibus asperiores ab, totam repudiandae ducimus illum, repellat dolorem! Quam doloribus modi incidunt ex!",
+      title: "Apply To Jobs",
+      text: "We want job seekers and employers to connect directly. After you find the right job, you’re sent straight to the employer’s site to apply. No signups. No fuss.",
       image: "../../../assets/img/home3.png",
       active:false,
       button:"",
@@ -43,8 +43,8 @@ export class HomePageComponent implements OnInit {
     },
     {
       id: 4,
-      title: "hello",
-      text: "    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo repellendus quod possimus vero officia corporis numquam voluptatibus asperiores ab, totam repudiandae ducimus illum, repellat dolorem! Quam doloribus modi incidunt ex!",
+      title: "Find The Job   That Fits Your Life",
+      text: "Finding a job shouldn’t be a full-time job. Tell us what you’re looking for and we’ll get to work for you.",
       image: "../../../assets/img/home1.svg",
       active:false,
       button:"Login",
