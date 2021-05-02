@@ -231,9 +231,11 @@ def get_emploi(id_emploi:int):
     row.append(row_headers[7])
     row.append("description")
     rv = mycursor.fetchall()
-    res=[]
+    
     json_data=[]
     for result in rv:
+      res=[]
+      result = list(result)
       res.append(result[0])  
       res.append(result[1])
       res.append(result[2])
