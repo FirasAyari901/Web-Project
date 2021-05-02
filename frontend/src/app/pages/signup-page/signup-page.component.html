@@ -1,0 +1,119 @@
+  <div class="form">
+    <form action="">
+      <div id="slide-1" (touchstart)="swipe($event, 'start',1)" (touchend)="swipe($event, 'end',1)" class="mobile-slide-1" [@openClose]="slide1 ? 'open' : 'closed'">
+        <span class="example-container firstLine">
+          <mat-form-field appearance="legacy">
+            <mat-label>First name</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </span>
+        <span class="example-container firstLine">
+          <mat-form-field appearance="legacy">
+            <mat-label>last name</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </span>
+        <span class="example-container firstLine">
+          <mat-form-field appearance="legacy">
+            <mat-label>Phone Number</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </span>
+        <span class="example-container secondLine">
+          <mat-form-field appearance="legacy">
+            <mat-label>CIN </mat-label>
+            <input matInput>
+          </mat-form-field>
+        </span>
+        <span class="example-container secondLine">
+          <mat-form-field appearance="legacy">
+            <mat-label>Age</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </span>
+        <span class="example-container large">
+          <mat-form-field appearance="legacy">
+            <mat-label>email</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </span>
+      </div>
+      <div id="slide-2" (touchstart)="swipe($event, 'start',2)" (touchend)="swipe($event, 'end',2)" class="mobile-slide-2" [@openClose]="slide2 ? 'open' : 'closed'">
+        <span class="password">
+          <mat-form-field appearance="legacy">
+            <mat-label> Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </span>
+        <span class="password">
+          <mat-form-field appearance="legacy">
+            <mat-label>Confirm password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </span>
+      </div><br><br><br>
+      <div id="slide-3" (touchstart)="swipe($event, 'start',3)" (touchend)="swipe($event, 'end',3)" class="mobile-slide-3" [@openClose]="slide3 ? 'open' : 'closed'">
+        <span>
+          <input id="file" type="file" value="Add profile picture" style="display: none;">
+          <button class="bouton" (click)="thisFileUpload()">Add profile picture</button>
+        </span>
+
+        <span>
+          <img id="inputImg" src="../../../assets/img/face-recognition.svg">
+        </span>
+ 
+
+        <span class=" thirdLine">
+          <mat-form-field appearance="legacy" id="status">
+            <mat-label>I am a :</mat-label>
+            <mat-select>
+              <mat-option value="recuiter">recuiter</mat-option>
+              <mat-option value="demandeur">demandeur</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+        <span class=" thirdLine">
+          <mat-form-field appearance="legacy">
+            <mat-label>Domain</mat-label>
+            <mat-select (selectionChange)="addField($event.value)">
+              <mat-option value="Front-end">Front-end</mat-option>
+              <mat-option value="UI/UX">UI/UX</mat-option>
+              <mat-option value="Back-end">Back-end</mat-option>
+              <mat-option value="manager">manager</mat-option>
+            </mat-select>
+          </mat-form-field>  
+        </span>
+        <div class="Field">
+          <app-field *ngFor="let field of fields" [field]="field" (deleted)="delete($event)"></app-field>
+        </div>
+      </div>
+      <input id="submit" type="submit" (click)="submited($event)" value="submit" style="display: none;">
+
+  </form>
+</div>
+<div id="slide-4" class="mobile-slide-4" [@openClose]="slide4 ? 'open' : 'closed'">
+  <div class="image">
+    <img src="../../../assets/img/home4.png" alt="">
+  </div>
+  <div id="cover">
+    <div>
+      SIGN UP
+    </div><br>
+    <button class="bouton" (click)="submit()" [routerLink]="['/postedoffers']" routerLinkActive="router-link-active" >SIGN UP</button>
+  </div>
+</div>
+
+<div class="con">
+  <div id="nav1" class="nav"></div>
+  <div id="nav2" class="nav"></div>
+  <div id="nav3" class="nav"></div>
+  <div id="nav4" class="nav"></div>
+</div>

@@ -1,0 +1,44 @@
+.card{
+    border-radius: 15px;
+    width: 100%}
+.card-title{
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.774);
+}
+.card-subtitle{
+    font-size: 1.2rem;
+
+}
+.fields{
+    padding-top: 10px;
+       display: table-cell;
+
+}
+.button{
+    display: table-cell;
+    position: absolute;
+    right: 10%;
+}
+.price{
+    position: absolute;
+    right: 10%;
+}
+.con{
+
+    display: table-row;
+}
+.btn-primary{
+    background-color: #1bbff4;
+    color: rgb(255, 255, 255);
+}
+textarea{
+    height: 300px;
+}
+@media all and (max-width: 1024px) {
+   
+    .card-title{
+        font-size: 1.8rem;
+    font-weight: 500;
+    }
+}

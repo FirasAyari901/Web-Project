@@ -1,0 +1,20 @@
+div{
+    height: 35px;
+    display: table-cell;
+  }
+  .field {
+    margin: 5px ;
+    padding: 0px 4px;
+  
+    border: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: rgba(0, 0, 0, 0.342);
+    font-size: 20px;
+    background-color: #1bbef470;
+    color: rgba(0, 0, 0, 0.589);
+    cursor: default;
+  }
+  
+ 
+  

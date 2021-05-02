@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add Offer >
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-6">
+      <app-card-emp-post></app-card-emp-post><br><br>
+      <app-card-emp-post></app-card-emp-post><br><br>
+      <app-card-emp-post></app-card-emp-post><br><br>
+      <app-card-emp-post></app-card-emp-post><br><br>
+      <app-card-emp-post></app-card-emp-post><br><br>
+
+    </div>
+    <div class="col-12 col-sm-6">
+      <app-card-emp-post></app-card-emp-post><br><br>
+      <app-card-emp-post></app-card-emp-post><br><br>
+      <app-card-emp-post></app-card-emp-post><br><br>
+      <app-card-emp-post></app-card-emp-post><br><br>
+      <app-card-emp-post></app-card-emp-post><br><br>
+
+    </div>
+  </div>
+
+
+
+  <div class="navs">
+    <img src="../../../assets/img/next.png" alt="" class="left">
+    <img src="../../../assets/img/next.png" alt="">
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Add an offer</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control" id="recipient-name" placeholder="Job title">
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" id="recipient-name" placeholder="Job title">
+          </div>
+          <div class="mb-3">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Contract type</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" id="message-text" placeholder="description"></textarea>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-info">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+.container{
+    position: absolute;
+}
+img{
+    position: fixed;
+    top: 25%;
+    right: 15%;
+    height: 50%;
+}
+h1{
+    color:rgba(0, 0, 0, 0.6);
+    font-size:3vw;
+    margin-bottom: 50px;
+    line-height: 1;
+}
+p{
+    color:rgba(0, 0, 0, 0.6);   
+    font-size:  1vw; 
+}
+.text{
+    position: fixed;
+    top: 35%;
+    left:20% ;
+    right: 15%;
+    width: 25%;
+    height: auto;
+    
+
+}
+button{
+    position :absolute;
+    left: 40%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+@media all and (max-width: 425px) {
+    img{
+        position: fixed;
+        top: 40%;   
+        width: 80%;
+        left: 10%;
+    }
+    h1{
+        color:b6;
+        font-size:5vh;
+        
+    }
+    p{
+        color:rgba(0, 0, 0, 0.6);   
+        font-size:large;    
+    }
+    
+    .text{
+        top: 10%;
+        width: 80%;
+        height: 40%;
+        left: 10%;
+    font-size:30px;
+    }
+ 
+    
+    
+}
+@media all and (max-width: 1024px) and (min-width: 426px) {
+    img{
+        position: fixed;
+        top: 40%;
+        left: 20%;
+        width: 60%;
+    }
+    h1{
+        color:b6;
+        font-size:5vh;
+    }
+    p{
+        color:rgba(0, 0, 0, 0.6);   
+        font-size:larger;   
+    }
+    .text{
+        top: 25%;
+        width: 80%;
+        left: 10%;
+    }
+ 
+    
+    
+}

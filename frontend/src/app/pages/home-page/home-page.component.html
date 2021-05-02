@@ -1,0 +1,3 @@
+<app-navs (nav)="navigation($event)"></app-navs>
+<app-slide *ngFor="let Slide of slides" [S]="Slide" [active]="nav.active" ></app-slide>
+ 
