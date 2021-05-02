@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendServiceService } from'../../servives/backend-service.service'
+import{empCard} from '../../components/card-empois/card-emplois'
+import{field} from './field'
 
 @Component({
   selector: 'app-serch-emp-page',
@@ -8,8 +11,19 @@ import { Component, OnInit } from '@angular/core';
 export class SerchEmpPageComponent implements OnInit {
 
   constructor() { }
-
-  ngOnInit(): void {
+  emps :empCard[]
+  fields :field[]
+  test :any
+  
+  private backend =  new BackendServiceService()
+  async ngOnInit() {
+  this.emps = await this.backend.alloffers()
+  this.fields = await this.backend.getFields()
+  
   }
+  async getEmpField(id_field){
+    this.emps = await this.backend.getEmpF(id_field)
+  }
+ 
 
 }

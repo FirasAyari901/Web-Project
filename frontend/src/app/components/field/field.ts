@@ -1,4 +1,4 @@
 export class Field{
-   idField:Number;
+   idField:number;
    Field:String;
 }

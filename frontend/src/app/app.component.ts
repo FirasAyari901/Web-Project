@@ -5,7 +5,6 @@ import {
 
 
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,5 +13,12 @@ import {
 })
 export class AppComponent {
   title = 'job&career';
+ 
+
+  
+
+  constructor() {
+}
+ 
 }
  

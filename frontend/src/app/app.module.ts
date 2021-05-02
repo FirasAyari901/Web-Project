@@ -4,7 +4,6 @@ import {
 import {
   BrowserModule
 } from '@angular/platform-browser';
-import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import {
   MatRadioModule
 } from '@angular/material/radio';
@@ -24,6 +23,7 @@ import {
   MatIconModule
 } from '@angular/material/icon';
 //import {MatLabel} from '@angular/material/label'; 
+import { HttpClientModule } from '@angular/common/http'
 
 import {
   AppRoutingModule
@@ -83,14 +83,13 @@ import {
 import {
   PostedEmpPageComponent
 } from './pages/posted-emp-page/posted-emp-page.component';
-import * as Hammer from 'hammerjs';
-import { ImgsComponent } from './imgs/imgs.component';
+import {enableProdMode} from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PersonnePostulerPageComponent } from './pages/personne-postuler-page/personne-postuler-page.component';
+import { CardPersonnePostulerComponent } from './components/card-personne-postuler/card-personne-postuler.component';
 
-export class CustumHammerConfig extends HammerGestureConfig  {
-  overrides = <any>{
-    'swipe': {velocity: 0.4, threshold: 20} // override default settings
-  }
-}
+
+enableProdMode();
 
 const appRoutes: Routes = [{
     path: '',
@@ -116,6 +115,10 @@ const appRoutes: Routes = [{
   {
     path: 'postedoffers',
     component: PostedEmpPageComponent,
+  },
+  {
+    path: 'perpos',
+    component: PersonnePostulerPageComponent,
   }
 
 ];
@@ -137,7 +140,8 @@ const appRoutes: Routes = [{
     PostulationPageComponent,
     CardEmpPostComponent,
     PostedEmpPageComponent,
-    ImgsComponent,
+    PersonnePostulerPageComponent,
+    CardPersonnePostulerComponent,
   ],
   imports: [
     BrowserModule,
@@ -149,10 +153,12 @@ const appRoutes: Routes = [{
     MatInputModule,
     MatSelectModule,
     MatIconModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    NgbModule
     //MatLabel
   ],
-  providers: [{provide:HAMMER_GESTURE_CONFIG  ,useClass:CustumHammerConfig}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

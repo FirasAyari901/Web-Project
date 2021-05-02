@@ -1,0 +1,12 @@
+<div class="container">
+    <br><br>
+    <div class="row">
+        <div class="col-4"><a href="" [routerLink]="['/postedoffers']" routerLinkActive="router-link-active">< Job Posted</a></div>
+    </div><br>
+    <div class="row">
+           
+            <app-card-personne-postuler class="col-12 col-md-6" *ngFor="let item of personnes" [personne]="item"></app-card-personne-postuler>
+
+ 
+    </div>
+</div>

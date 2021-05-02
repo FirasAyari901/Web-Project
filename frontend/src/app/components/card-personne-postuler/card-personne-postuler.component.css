@@ -1,0 +1,6 @@
+.father{
+    display: table-row;
+}
+.child{
+    display: table-cell;
+}

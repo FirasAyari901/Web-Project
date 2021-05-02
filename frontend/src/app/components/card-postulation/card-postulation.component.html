@@ -1,18 +1,16 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <div class="card-subtitle mb-2 text-muted child">LineData</div>
-    <div class="child bt btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> More...</div>
+    <h5 class="card-title">{{p.emptitle}}</h5>
+    <div class="card-subtitle mb-2 text-muted child">{{p.empname}}</div>
+    <div class="child bt btn btn-primary" data-bs-toggle="modal" data-bs-target="#ok" (click)="popUp()"> More...</div>
   </div>
-</div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</div><br>
+<div class="modal fade" id={{popup}} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="popout()"></button>
 
-      <div class="modal-body" style="font-size: 1.5rem;">
- your request has been updated! <br> check you email for more informations <br><br>
-      </div>
+      <div class="modal-body" style="font-size: 1.5rem;">{{p.response}}</div>
   
     </div>
   </div>

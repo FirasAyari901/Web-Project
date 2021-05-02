@@ -1,6 +1,6 @@
 <div class="container">
   <div class="text"[@openClose]="S.active ? 'open' : 'closed'">
-    <h1>{{ S.title }}</h1>
+    <h1 style="line-height: 1;">{{ S.title }}</h1>
     <p>{{S.text}}</p>
     <button class="btn btn-outline-info" [routerLink]="['/login']" [style.display]="S.btnDis ? 'none' :''">{{S.button}}</button>
   </div>

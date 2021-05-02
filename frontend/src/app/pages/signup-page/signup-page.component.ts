@@ -10,13 +10,13 @@ import {
   OnInit
 } from '@angular/core';
 import {
-  Field
-} from '../../components/field/field';
-4
-import {
   BreakpointObserver,
   BreakpointState
 } from '@angular/cdk/layout';
+import { BackendServiceService } from'../../servives/backend-service.service'
+import { Field } from'../../components/field/field'
+import { field } from'../serch-emp-page/field'
+
 
 @Component({
   selector: 'app-signup-page',
@@ -45,13 +45,22 @@ import {
   ]
 })
 export class SignupPageComponent implements OnInit {
+  private backend =  new BackendServiceService()
   public showContainer: boolean;
   slide1 :Boolean; 
   slide2 :Boolean; 
   slide3 :Boolean; 
   slide4 :Boolean; 
+  fields: Field[] = [];
+  allfields: field[];
+  f :number[] = []
+  routerlink:string
+
+  recruteur:boolean
   constructor(public breakpointObserver: BreakpointObserver) {}
-  ngOnInit(): void {
+  async ngOnInit() {
+this.allfields = await this.backend.getAllFields()
+
     document.getElementById("nav1").style.backgroundColor = "#1bbff4e1"
     this.breakpointObserver
       .observe(['(max-width: 1000px)'])
@@ -75,23 +84,52 @@ export class SignupPageComponent implements OnInit {
   }
  
   hide = true;
-  fields: Field[] = [];
   thisFileUpload() {
     document.getElementById("file").click();
   }
-  submit() {
+  async submit(firstname:string,lastname:string,phonenum:string,CIN:string,age:string,mail:string,pwd:string) {
     document.getElementById("submit").click();
-  }
+    
+const res = await this.backend.signup(mail,firstname,lastname,phonenum,CIN,age,pwd,"photo",this.recruteur)
+   if (res.signup == true) {
+    sessionStorage.emailuser = mail
+    for (let i = 0; i < this.fields.length; i++) {
+      this.backend.AddFA(mail,this.fields[i].idField)
+      console.log(mail,this.fields[i].idField)
+
+    }
+    if (this.recruteur) {
+      this.routerlink = '/postedoffers'
+    }  
+    else{
+      this.routerlink = '/offers'
+    }
+ }
+}
   submited(e : Event) {
     e.preventDefault()
   }
   addField(str: String) {
-    let field = new Field;
-    field.idField = 1;
-    field.Field = str;
-    this.fields.push(field);
+   let field = new Field;
+    for (let i = 0; i < this.allfields.length; i++) {
+      if (str == this.allfields[i].field) {
+       field.idField = this.allfields[i].id_field; 
+     field.Field = str;
+     break
+     }  
+    }
+   let ok =false
+    for (let i = 0; i < this.fields.length; i++) {
+      if ( this.fields[i].idField == field.idField) {
+        ok = true
+        break
+      }
+      
+    }
+    if (ok == false) {
+      this.fields.push(field);
+    }
     
-
   }
   delete(id: Number) {
     this.fields.forEach(f => {
@@ -99,6 +137,15 @@ export class SignupPageComponent implements OnInit {
         this.fields.splice(this.fields.indexOf(f), 1);
       }
     });
+  }
+  isRecruteur(rec :string){
+    if (rec == 'recruteur') {
+       this.recruteur = true     
+    }else{
+      this.recruteur = false     
+
+    }
+
   }
 
   witch(id: Number) {
@@ -176,4 +223,6 @@ export class SignupPageComponent implements OnInit {
     
 
   }
+
+
 }

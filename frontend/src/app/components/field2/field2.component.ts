@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {
   Field
 } from '../field/field';
@@ -10,6 +10,7 @@ import {
 })
 export class Field2Component implements OnInit {
   public field: Field;
+  @Input() f: string;
   constructor() { }
 
   ngOnInit(): void {
