@@ -11,6 +11,7 @@ export class LoginPageComponent implements OnInit {
   routerlink :string
   private backend =  new BackendServiceService()
   ngOnInit(): void {
+    alert("Veuillez cliquer 3 fois sur les boutons pour valider votre choix and close the pop-ups with the cursor (X)")
     sessionStorage.clear()
     localStorage.clear()
   }
